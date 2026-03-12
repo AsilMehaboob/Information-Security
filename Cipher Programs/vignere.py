@@ -1,6 +1,7 @@
 def vignere_encrypt(plaintext, key):
     ciphertext = ""
     key=key.upper()
+    plaintext=plaintext.upper()
     key_index = 0
     for char in plaintext:
         if char.isalpha():
@@ -27,8 +28,8 @@ def vignere_decrypt(ciphertext, key):
     return plaintext
 
 
-message = "HELLO WORLD"
-key = "KEY"
+message = "we are discovered save yourself"
+key = "deceptive"
 encrypted_message = vignere_encrypt(message, key)
 print("Encrypted message:", encrypted_message)
 decrypted_message = vignere_decrypt(encrypted_message, key)
