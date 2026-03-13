@@ -1,16 +1,15 @@
-def vignere_encrypt(plaintext, key):
+def vignere_encrypt(plaintext,key):
     ciphertext = ""
     key=key.upper()
-    plaintext=plaintext.upper()
     key_index = 0
+    plaintext=plaintext.upper()
     for char in plaintext:
         if char.isalpha():
-            shift = ord(key[key_index%len(key)]) - 65
-            encrypted_char = chr((ord(char) + shift - 65) % 26 + 65)
-            ciphertext += encrypted_char
-            key_index += 1
+            shift=ord(key[key_index%len(key)]) -65
+            ciphertext+=chr((ord(char) +shift -65)%26 +65)
+            key_index+=1
         else:
-            ciphertext += char
+            ciphertext+=char
     return ciphertext
 
 def vignere_decrypt(ciphertext, key):
@@ -28,7 +27,7 @@ def vignere_decrypt(ciphertext, key):
     return plaintext
 
 
-message = "we are discovered save yourself"
+message = input("Enter the message to encrypt: ")
 key = "deceptive"
 encrypted_message = vignere_encrypt(message, key)
 print("Encrypted message:", encrypted_message)
